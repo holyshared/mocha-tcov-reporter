@@ -17,7 +17,7 @@ colorize = (coverage) ->
     color('bright yellow', percent)
 
 write = (values...) ->
-  output = format '%s %d/%d %s', values
+  output = format '%s (%2d/%2d) %s', values
   stdout.write output + '\n'
 
 module.exports = formatter
