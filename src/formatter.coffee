@@ -1,14 +1,13 @@
 color = require('mocha').reporters.Base.color
 stdout = process.stdout
+format = require('sprintf-js').vsprintf
 
 formatter = (result) ->
   coverage = colorize(result.coverage)
-  lineResult = result.executed + '/' + result.total
-
-  write coverage, lineResult, result.fileName
+  write coverage, result.executed, result.total, result.fileName
 
 colorize = (coverage) ->
-  percent = coverage + "%"
+  percent = format '%6.2f%%', [coverage]
 
   if coverage >= 75
     color('green', percent)
@@ -18,7 +17,7 @@ colorize = (coverage) ->
     color('bright yellow', percent)
 
 write = (values...) ->
-  output = values.join(' ') + '\n'
-  stdout.write output
+  output = format '%s %d/%d %s', values
+  stdout.write output + '\n'
 
 module.exports = formatter
