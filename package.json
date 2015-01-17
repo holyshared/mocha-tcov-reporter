@@ -1,0 +1,36 @@
+{
+  "name": "mocha-text-reporter",
+  "version": "0.0.1",
+  "description": "mocha-text-reporter",
+  "main": "lib/reporter.js",
+  "scripts": {
+    "test": "multi='spec=- ' ./node_modules/.bin/mocha test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/holyshared/mocha-text-reporter.git"
+  },
+  "author": "Noritaka Horio <holy.shared.design@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/holyshared/mocha-text-reporter/issues"
+  },
+  "homepage": "https://github.com/holyshared/mocha-text-reporter",
+  "dependencies": {
+    "mocha": "^2.1.0"
+  },
+  "devDependencies": {
+    "blanket": "^1.1.6",
+    "chai": "^1.10.0",
+    "coffee-script": "^1.8.0",
+    "gulp": "^3.8.10",
+    "mocha-multi": "^0.6.0",
+    "sinon": "^1.12.2"
+  },
+  "config": {
+    "blanket": {
+      "pattern": "/lib/",
+      "data-cover-never": "/node_modules/"
+    }
+  }
+}
