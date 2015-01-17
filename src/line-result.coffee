@@ -2,6 +2,7 @@ class LineResult
 
   constructor: (results) ->
     @calculate(results)
+    Object.freeze @
 
   calculate: (results) ->
     @total = 0
