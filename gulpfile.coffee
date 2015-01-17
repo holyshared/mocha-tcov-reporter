@@ -2,6 +2,7 @@ gulp = require 'gulp'
 gutil = require 'gulp-util'
 coffee = require 'gulp-coffee'
 sourcemaps = require 'gulp-sourcemaps'
+run = require 'gulp-run'
 
 gulp.task 'coffee', ->
 
@@ -13,3 +14,8 @@ gulp.task 'coffee', ->
     .pipe(coffeeStream)
     .pipe(sourcemaps.write '.')
     .pipe(gulp.dest './lib/')
+
+gulp.task 'coveralls', ->
+
+  gulp.src('./coverage/report.lcov')
+    .pipe(run('./node_modules/.bin/coveralls'));
