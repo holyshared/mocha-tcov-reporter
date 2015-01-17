@@ -4,7 +4,8 @@
   "description": "mocha-text-reporter",
   "main": "lib/reporter.js",
   "scripts": {
-    "test": "multi='spec=- ' ./node_modules/.bin/mocha test"
+    "test": "multi='spec=- ' ./node_modules/.bin/mocha test",
+    "build": "gulp coffee"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,9 @@
     "chai": "^1.10.0",
     "coffee-script": "^1.8.0",
     "gulp": "^3.8.10",
+    "gulp-coffee": "^2.2.0",
+    "gulp-sourcemaps": "^1.3.0",
+    "gulp-util": "^3.0.2",
     "mocha-multi": "^0.6.0",
     "sinon": "^1.12.2"
   },
