@@ -7,9 +7,10 @@ class FileResult
 
 Object.defineProperty FileResult::, 'fileName', get: -> @_name
 Object.defineProperty FileResult::, 'executed', get: -> @_result.executed
+Object.defineProperty FileResult::, 'unused', get: -> @_result.unused
 Object.defineProperty FileResult::, 'total', get: -> @_result.total
 Object.defineProperty FileResult::, 'coverage', get: ->
   coverage = @executed / @total * 100
-  coverage.toFixed 2
+  parseFloat(coverage.toFixed(2))
 
 module.exports = FileResult
