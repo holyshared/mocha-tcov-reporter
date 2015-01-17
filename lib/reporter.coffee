@@ -3,7 +3,7 @@ Base = require('mocha').reporters.Base
 
 class TextReporter extends Base
   constructor: (runner) ->
-    runner.on 'end', @end
+    runner.on 'end', @end.bind @
 
   end: ->
     results = []
@@ -36,7 +36,7 @@ class FileResult
       if result == 0
         unused++
         total++
-      else if result != undefined  
+      else if result != undefined
         executed++
         total++
 
