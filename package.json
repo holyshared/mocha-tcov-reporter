@@ -1,7 +1,7 @@
 {
-  "name": "mocha-text-reporter",
+  "name": "mocha-tcov-reporter",
   "version": "0.0.1",
-  "description": "mocha-text-reporter",
+  "description": "mocha-tcov-reporter",
   "main": "lib/reporter.js",
   "scripts": {
     "test": "multi='spec=- mocha-lcov-reporter=coverage/report.lcov' ./node_modules/.bin/mocha test",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/holyshared/mocha-text-reporter.git"
+    "url": "https://github.com/holyshared/mocha-tcov-reporter.git"
   },
   "author": "Noritaka Horio <holy.shared.design@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/holyshared/mocha-text-reporter/issues"
+    "url": "https://github.com/holyshared/mocha-tcov-reporter/issues"
   },
-  "homepage": "https://github.com/holyshared/mocha-text-reporter",
+  "homepage": "https://github.com/holyshared/mocha-tcov-reporter",
   "dependencies": {
     "mocha": "^2.1.0"
   },
