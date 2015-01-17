@@ -8,6 +8,12 @@ class FileResult
   getFileName: ->
     @name
 
+  getExecutedLineCount: ->
+    @result.executed
+
+  getTotalLineCount: ->
+    @result.total
+
   getCodeCoverage: ->
     coverage = @result.executed / @result.total * 100
     coverage.toFixed 2

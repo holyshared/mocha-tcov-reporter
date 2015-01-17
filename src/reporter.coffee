@@ -1,6 +1,8 @@
 util = require 'util'
 Base = require('mocha').reporters.Base
 FileResult = require './file-result'
+formatter = require './formatter'
+
 
 class TextReporter extends Base
   constructor: (runner) ->
@@ -13,8 +15,7 @@ class TextReporter extends Base
     for file, lineResults of coverages
       results.push new FileResult(file, lineResults)
 
-    results.forEach (result) ->
-      util.log result.getCodeCoverage()
+    results.forEach formatter
 
     @results = results
 
