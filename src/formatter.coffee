@@ -15,7 +15,7 @@ colorize = (coverage) ->
   else if coverage < 30
     color('fail', percent)
   else
-    color('yellow', percent)
+    color('bright yellow', percent)
 
 write = (values...) ->
   output = values.join(' ') + '\n'
