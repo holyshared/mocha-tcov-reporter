@@ -5,6 +5,7 @@ format = require('sprintf-js').vsprintf
 module.exports.format = (results) ->
   stdout.write "\nCode Coverage Results:\n\n"
   results.forEach fileResultFormatter
+  stdout.write "\n"
 
 fileResultFormatter = (result) ->
   coverage = colorize(result.coverage)
