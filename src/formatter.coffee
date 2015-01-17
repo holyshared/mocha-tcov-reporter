@@ -18,7 +18,7 @@ colorize = (coverage) ->
     color('yellow', percent)
 
 write = (values...) ->
-  output = values.join(' ')
+  output = values.join(' ') + '\n'
   stdout.write output
 
 module.exports = formatter
