@@ -5,7 +5,7 @@
   "main": "lib/reporter.js",
   "scripts": {
     "test": "multi='spec=- ' ./node_modules/.bin/mocha test",
-    "build": "gulp coffee"
+    "build": "gulp --require coffee-script coffee"
   },
   "repository": {
     "type": "git",
