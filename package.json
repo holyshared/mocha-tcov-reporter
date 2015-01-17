@@ -4,7 +4,7 @@
   "description": "mocha-text-reporter",
   "main": "lib/reporter.js",
   "scripts": {
-    "test": "multi='spec=- ' ./node_modules/.bin/mocha test",
+    "test": "multi='spec=- mocha-lcov-reporter=coverage/report.lcov' ./node_modules/.bin/mocha test",
     "build": "gulp --require coffee-script coffee"
   },
   "repository": {
@@ -28,6 +28,7 @@
     "gulp-coffee": "^2.2.0",
     "gulp-sourcemaps": "^1.3.0",
     "gulp-util": "^3.0.2",
+    "mocha-lcov-reporter": "0.0.1",
     "mocha-multi": "^0.6.0",
     "sinon": "^1.12.2"
   },
