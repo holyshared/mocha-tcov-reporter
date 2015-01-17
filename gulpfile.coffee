@@ -9,7 +9,7 @@ gulp.task 'coffee', ->
   coffeeStream = coffee({ bare: true })
     .on('error', gutil.log)
 
-  gulp.src('./lib/*.coffee')
+  gulp.src('./src/*.coffee')
     .pipe(sourcemaps.init())
     .pipe(coffeeStream)
     .pipe(sourcemaps.write '../sourcemap')
