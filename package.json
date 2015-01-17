@@ -1,7 +1,8 @@
 {
   "name": "mocha-tcov-reporter",
   "version": "0.0.2",
-  "description": "mocha-tcov-reporter",
+  "keywords": ["mocha", "code coverage", "reporter", "text", "file list", "simple", "blanket"],
+  "description": "code coverage reporter for mocha",
   "main": "lib/reporter.js",
   "scripts": {
     "test": "multi='spec=- mocha-lcov-reporter=coverage/report.lcov' ./node_modules/.bin/mocha test",
