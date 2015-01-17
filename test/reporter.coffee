@@ -2,6 +2,7 @@ expect = require('chai').expect
 util = require 'util'
 TextReporter = require '../lib/reporter'
 report = require './fixtures/report'
+sinon = require 'sinon'
 
 describe 'TextReporter', ->
   beforeEach ->
@@ -12,6 +13,7 @@ describe 'TextReporter', ->
         @callback()
     }
     @reporter = new TextReporter(runner)
+    sinon.stub(@reporter, "getCoverages").returns(report);
     @runner = runner
 
   describe '#getResults', ->
