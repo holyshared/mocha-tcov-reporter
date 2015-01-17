@@ -15,7 +15,7 @@ class TextReporter extends Base
     for file, lineResults of coverages
       results.push new FileResult(file, lineResults)
 
-    results.forEach formatter
+    formatter.format results
 
     @results = results
 
