@@ -1,15 +1,16 @@
 color = require('mocha').reporters.Base.color
-stdout = process.stdout
 format = require('sprintf-js').vsprintf
+writer = require('./report-writer')
 
 module.exports.format = (result) ->
-  stdout.write "\nCode Coverage Results:\n\n"
+  writer.writeln "\nCode Coverage Results:\n"
   result.files.forEach fileResultFormatter
-  stdout.write "\n"
 
   coverage = colorize(result.coverage)
-  stdout.write "Total Coverage: " + coverage + "\n"
-  stdout.write "\n"
+
+  writer.writeEOL()
+  writer.writeln "Total Coverage: " + coverage
+  writer.writeEOL()
 
 fileResultFormatter = (file) ->
   coverage = colorize(file.coverage)
@@ -27,4 +28,4 @@ colorize = (coverage) ->
 
 writeFileResult = (values...) ->
   output = format '%s (%2d/%2d) %s', values
-  stdout.write output + '\n'
+  writer.writeln output
