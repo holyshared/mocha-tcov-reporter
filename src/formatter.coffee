@@ -7,6 +7,10 @@ module.exports.format = (result) ->
   result.files.forEach fileResultFormatter
   stdout.write "\n"
 
+  coverage = colorize(result.coverage)
+  stdout.write "Total Coverage: " + coverage + "\n"
+  stdout.write "\n"
+
 fileResultFormatter = (file) ->
   coverage = colorize(file.coverage)
   writeFileResult coverage, file.executed, file.total, file.fileName
