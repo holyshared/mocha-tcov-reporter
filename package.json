@@ -1,6 +1,6 @@
 {
   "name": "mocha-tcov-reporter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": ["mocha", "code coverage", "reporter", "text", "file list", "simple", "blanket"],
   "description": "code coverage reporter for mocha",
   "main": "lib/reporter.js",
