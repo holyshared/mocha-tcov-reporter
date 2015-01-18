@@ -32,3 +32,13 @@ Add a set of [blanket](https://github.com/alex-seville/blanket) to package.json.
 After that, You need to specify the reporter.  
 
 	mocha -r blanket -R mocha-tcov-reporter test
+
+
+Multi Reporter
+------------------------------------------
+
+With [mocha-multi](https://github.com/glenjamin/mocha-multi), you can view the report along with the test results.  
+In the example below, we have used in conjunction with the spec reporter.
+
+	multi='spec=- mocha-tcov-reporter=-' mocha -r blanket -R mocha-multi test
+
