@@ -16,10 +16,10 @@ describe 'TextReporter', ->
     sinon.stub(@reporter, "getCoverages").returns(report);
     @runner = runner
 
-  describe '#getResults', ->
+  describe '#getFiles', ->
     beforeEach ->
       @runner.emmit()
 
-    it 'return results', ->
-      results = @reporter.getResults()
+    it 'return file results', ->
+      results = @reporter.getFiles()
       expect(results.length).to.be.equal(1)
