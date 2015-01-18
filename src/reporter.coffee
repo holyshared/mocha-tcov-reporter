@@ -1,6 +1,7 @@
 util = require 'util'
 Base = require('mocha').reporters.Base
 FileResult = require './file-result'
+Result = require './result'
 formatter = require './formatter'
 
 
@@ -9,20 +10,15 @@ class TextReporter extends Base
     runner.on 'end', @end.bind @
 
   end: ->
-    results = []
     coverages = @getCoverages()
-
-    for file, lineResults of coverages
-      results.push new FileResult(file, lineResults)
-
-    formatter.format results
-
-    @results = results
+    result = Result.createFrom coverages
+    formatter.format result
+    @result = result
 
   getCoverages: ->
     global._$jscoverage || {}
 
-  getResults: () ->
-    @results
+  getFiles: () ->
+    @result.files
 
 module.exports = TextReporter
