@@ -35,9 +35,9 @@ class ReportWriter
   colorize = (coverage) ->
     percent = format '%6.2f%%', [coverage]
 
-    if coverage >= 75
+    if coverage >= @options.satisfactory
       color('green', percent)
-    else if coverage < 30
+    else if coverage < @options.critical
       color('fail', percent)
     else
       color('bright yellow', percent)
