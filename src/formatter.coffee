@@ -1,6 +1,6 @@
 color = require('mocha').reporters.Base.color
 format = require('sprintf-js').vsprintf
-writer = require('./report-writer')
+writer = require('./console-writer')
 
 
 class Formatter
