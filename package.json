@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/holyshared/mocha-tcov-reporter",
   "dependencies": {
-    "mocha": "^2.1.0",
+    "mocha": "^2.2.0",
     "sprintf-js": "^1.0.2"
   },
   "devDependencies": {
