@@ -8,8 +8,8 @@ ReportWriter = require './report-writer'
 # TextReporter
 #
 # options.reporterOptions
-#   satisfactory -
-#   critical -
+#   satisfactory - Satisfactory code coverage of value
+#   critical - Critical code coverage of value
 #
 class TextReporter extends Base
   constructor: (runner, options) ->
