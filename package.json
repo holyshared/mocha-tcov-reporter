@@ -14,8 +14,8 @@
   "main": "lib/reporter.js",
   "scripts": {
     "test": "multi='spec=- mocha-lcov-reporter=coverage/report.lcov' ./node_modules/mocha/bin/mocha test",
-    "build": "gulp --require coffee-script coffee",
-    "coveralls": "gulp --require coffee-script coveralls"
+    "build": "./node_modules/gulp/bin/gulp.js --require coffee-script coffee",
+    "coveralls": "./node_modules/gulp/bin/gulp.js --require coffee-script coveralls"
   },
   "repository": {
     "type": "git",

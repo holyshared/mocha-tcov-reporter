@@ -10,7 +10,7 @@ class ReportWriter
     satisfactory: 70.0
   }
 
-  construct: (options) ->
+  constructor: (options) ->
     @mergeOptions(options)
 
   mergeOptions: (options) ->
@@ -28,11 +28,11 @@ class ReportWriter
     writer.writeln "Total Coverage: " + coverage
     writer.writeEOL()
 
-  formatFileResult = (file) ->
+  formatFileResult: (file) ->
     coverage = @colorize(file.coverage)
     @writeFileResult coverage, file.executed, file.total, file.fileName
 
-  colorize = (coverage) ->
+  colorize: (coverage) ->
     percent = format '%6.2f%%', [coverage]
 
     if coverage >= @options.satisfactory
@@ -42,8 +42,8 @@ class ReportWriter
     else
       color('bright yellow', percent)
 
-  writeFileResult = (values...) ->
+  writeFileResult: (values...) ->
     output = format '%s (%2d/%2d) %s', values
     writer.writeln output
 
-module.exports = Formatter
+module.exports = ReportWriter

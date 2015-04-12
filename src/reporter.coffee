@@ -13,7 +13,8 @@ ReportWriter = require './report-writer'
 #
 class TextReporter extends Base
   constructor: (runner, options) ->
-    @writer = new ReportWriter(options.reporterOptions)
+    opts = options || {}
+    @writer = new ReportWriter(opts)
     runner.on 'end', @end.bind @
 
   end: ->
