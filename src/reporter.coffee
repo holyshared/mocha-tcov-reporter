@@ -2,7 +2,7 @@ util = require 'util'
 Base = require('mocha').reporters.Base
 FileResult = require './file-result'
 Result = require './result'
-Formatter = require './formatter'
+ReportWriter = require './report-writer'
 
 #
 # TextReporter
@@ -14,14 +14,14 @@ Formatter = require './formatter'
 class TextReporter extends Base
   constructor: (runner, options) ->
     @options = @parseOptions(options.reporterOptions)
-    @formatter = new Formatter(@options)
+    @writer = new ReportWriter(@options)
 
     runner.on 'end', @end.bind @
 
   end: ->
     coverages = @getCoverages()
     result = Result.createFrom coverages
-    @formatter.format result
+    result.sendTo @writer
     @result = result
 
   getCoverages: ->

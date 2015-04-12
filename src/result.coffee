@@ -3,6 +3,8 @@ FileResult = require './file-result'
 class Result
   constructor: (files) ->
     @_files = files
+  sendTo: (writer) ->
+    writer.writeReport @
 
 Object.defineProperty Result::, 'files', get: -> @_files
 Object.defineProperty Result::, 'coverage', get: ->

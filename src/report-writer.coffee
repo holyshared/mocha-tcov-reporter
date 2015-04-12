@@ -3,11 +3,11 @@ format = require('sprintf-js').vsprintf
 writer = require('./console-writer')
 
 
-class Formatter
+class ReportWriter
   construct: (options) ->
     @options = options
 
-  format: (result) ->
+  writeReport: (result) ->
     writer.writeln "\nCode Coverage Results:\n"
     result.files.forEach @formatFileResult, @
 
