@@ -13,9 +13,7 @@ ReportWriter = require './report-writer'
 #
 class TextReporter extends Base
   constructor: (runner, options) ->
-    @options = @parseOptions(options.reporterOptions)
-    @writer = new ReportWriter(@options)
-
+    @writer = new ReportWriter(options.reporterOptions)
     runner.on 'end', @end.bind @
 
   end: ->
@@ -29,11 +27,5 @@ class TextReporter extends Base
 
   getFiles: () ->
     @result.files
-
-  parseOptions: (options) ->
-    opts = {}
-    opts.critical = parseFloat(options.critical) || 30.0
-    opts.satisfactory = parseFloat(options.satisfactory) || 70.0
-    opts
 
 module.exports = TextReporter

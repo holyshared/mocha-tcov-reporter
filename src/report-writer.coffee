@@ -1,11 +1,22 @@
 color = require('mocha').reporters.Base.color
 format = require('sprintf-js').vsprintf
 writer = require('./console-writer')
-
+_ = require('lodash/object')
 
 class ReportWriter
+
+  defaultOptions: {
+    critical: 30.0,
+    satisfactory: 70.0
+  }
+
   construct: (options) ->
-    @options = options
+    @mergeOptions(options)
+
+  mergeOptions: (options) ->
+    @options = _.merge({}, @defaultOptions, options)
+    @options.critical = parseFloat(@options.critical)
+    @options.satisfactory = parseFloat(@options.satisfactory)
 
   writeReport: (result) ->
     writer.writeln "\nCode Coverage Results:\n"
