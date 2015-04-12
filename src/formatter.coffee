@@ -2,30 +2,37 @@ color = require('mocha').reporters.Base.color
 format = require('sprintf-js').vsprintf
 writer = require('./report-writer')
 
-module.exports.format = (result) ->
-  writer.writeln "\nCode Coverage Results:\n"
-  result.files.forEach fileResultFormatter
 
-  coverage = colorize(result.coverage)
+class Formatter
+  construct: (options) ->
+    @options = options
 
-  writer.writeEOL()
-  writer.writeln "Total Coverage: " + coverage
-  writer.writeEOL()
+  format: (result) ->
+    writer.writeln "\nCode Coverage Results:\n"
+    result.files.forEach @formatFileResult, @
 
-fileResultFormatter = (file) ->
-  coverage = colorize(file.coverage)
-  writeFileResult coverage, file.executed, file.total, file.fileName
+    coverage = @colorize(result.coverage)
 
-colorize = (coverage) ->
-  percent = format '%6.2f%%', [coverage]
+    writer.writeEOL()
+    writer.writeln "Total Coverage: " + coverage
+    writer.writeEOL()
 
-  if coverage >= 75
-    color('green', percent)
-  else if coverage < 30
-    color('fail', percent)
-  else
-    color('bright yellow', percent)
+  formatFileResult = (file) ->
+    coverage = @colorize(file.coverage)
+    @writeFileResult coverage, file.executed, file.total, file.fileName
 
-writeFileResult = (values...) ->
-  output = format '%s (%2d/%2d) %s', values
-  writer.writeln output
+  colorize = (coverage) ->
+    percent = format '%6.2f%%', [coverage]
+
+    if coverage >= 75
+      color('green', percent)
+    else if coverage < 30
+      color('fail', percent)
+    else
+      color('bright yellow', percent)
+
+  writeFileResult = (values...) ->
+    output = format '%s (%2d/%2d) %s', values
+    writer.writeln output
+
+module.exports = Formatter
