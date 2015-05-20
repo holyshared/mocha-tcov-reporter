@@ -1,13 +1,21 @@
 {
   "name": "mocha-tcov-reporter",
-  "version": "0.0.3",
-  "keywords": ["mocha", "code coverage", "reporter", "text", "file list", "simple", "blanket"],
+  "version": "0.0.4",
+  "keywords": [
+    "mocha",
+    "code coverage",
+    "reporter",
+    "text",
+    "file list",
+    "simple",
+    "blanket"
+  ],
   "description": "code coverage reporter for mocha",
   "main": "lib/reporter.js",
   "scripts": {
-    "test": "multi='spec=- mocha-lcov-reporter=coverage/report.lcov' ./node_modules/.bin/mocha test",
-    "build": "gulp --require coffee-script coffee",
-    "coveralls": "gulp --require coffee-script coveralls"
+    "test": "multi='spec=- mocha-lcov-reporter=coverage/lcov-report.lcov' ./node_modules/mocha/bin/mocha test",
+    "build": "./node_modules/gulp/bin/gulp.js --require coffee-script coffee",
+    "coveralls": "./node_modules/gulp/bin/gulp.js --require coffee-script coveralls"
   },
   "repository": {
     "type": "git",
@@ -20,12 +28,13 @@
   },
   "homepage": "https://github.com/holyshared/mocha-tcov-reporter",
   "dependencies": {
-    "mocha": "^2.1.0",
+    "lodash": "^3.6.0",
+    "mocha": "^2.2.0",
     "sprintf-js": "^1.0.2"
   },
   "devDependencies": {
-    "blanket": "^1.1.6",
-    "chai": "^1.10.0",
+    "blanket": "^1.1.7",
+    "chai": "^2.2.0",
     "coffee-script": "^1.8.0",
     "coveralls": "^2.11.2",
     "gulp": "^3.8.10",
@@ -33,8 +42,8 @@
     "gulp-run": "^1.6.6",
     "gulp-sourcemaps": "^1.3.0",
     "gulp-util": "^3.0.2",
-    "mocha-lcov-reporter": "0.0.1",
-    "mocha-multi": "^0.6.0",
+    "mocha-lcov-reporter": "0.0.2",
+    "mocha-multi": "^0.7.1",
     "sinon": "^1.12.2"
   },
   "config": {
