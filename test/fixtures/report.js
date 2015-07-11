@@ -1,6 +1,6 @@
 var fs = require('fs');
 var path = require('path');
-var Bluebird = require('Bluebird');
+var Bluebird = require('bluebird');
 var readFile = Bluebird.promisify(fs.readFile);
 
 module.exports = function() {
