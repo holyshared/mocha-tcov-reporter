@@ -1,6 +1,6 @@
 {
   "name": "mocha-tcov-reporter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "keywords": [
     "mocha",
     "code coverage",
@@ -28,12 +28,13 @@
   },
   "homepage": "https://github.com/holyshared/mocha-tcov-reporter",
   "dependencies": {
-    "lodash": "~3.9",
+    "lodash": "~3.10",
     "mocha": "~2.2",
     "sprintf-js": "~1.0"
   },
   "devDependencies": {
     "blanket": "~1.1",
+    "bluebird": "^2.9.33",
     "chai": "~3.0",
     "coffee-script": "~1.9",
     "coveralls": "~2.11",

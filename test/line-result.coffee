@@ -4,8 +4,11 @@ LineResult = require '../lib/line-result'
 
 describe 'LineResult', ->
   beforeEach ->
-    @coverages = report['path/to/source.js']
-    @result = new LineResult(@coverages)
+    report().bind(@).then (result) ->
+      path = result.path
+      resultReport = result.resultReport
+
+      @result = new LineResult(resultReport[path])
 
   describe 'executed', ->
     it 'return executed line count', ->

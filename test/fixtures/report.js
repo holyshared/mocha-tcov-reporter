@@ -1,31 +1,33 @@
-var report = {};
+var fs = require('fs');
+var path = require('path');
+var Bluebird = require('bluebird');
+var readFile = Bluebird.promisify(fs.readFile);
 
-var source = [
-  "'use strict';",
-  "",
-  "module.exports = function(value) {",
-  "  if (value) {",
-  "    return true;",
-  "  } else {",
-  "    return false;",
-  "  }",
-  "};"
-];
+module.exports = function() {
+  var sourceFile = path.join(__dirname, 'source.js');
 
-var lineResults = [
-  1,
-  undefined,
-  1,
-  1,
-  1,
-  undefined,
-  0,
-  undefined,
-  undefined
-];
+  var lineResults = [
+    1,
+    undefined,
+    1,
+    1,
+    1,
+    undefined,
+    0,
+    undefined,
+    undefined
+  ];
 
-lineResults.source = source;
+  return readFile(sourceFile).then(function(content) {
+    var report = {};
 
-report['path/to/source.js'] = lineResults;
+    lineResults.source = content.toString();
+    report[sourceFile] = lineResults;
 
-module.exports = report;
+    return Bluebird.resolve({
+      path: sourceFile,
+      resultReport: report
+    });
+  });
+
+};
