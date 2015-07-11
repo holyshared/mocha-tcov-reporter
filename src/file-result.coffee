@@ -1,3 +1,4 @@
+path = require 'path'
 LineResult = require './line-result'
 
 class FileResult
@@ -5,7 +6,9 @@ class FileResult
     @_name = name
     @_result = new LineResult(results)
 
-Object.defineProperty FileResult::, 'fileName', get: -> @_name
+Object.defineProperty FileResult::, 'fileName', get: ->
+  path.relative process.cwd(), @_name
+
 Object.defineProperty FileResult::, 'executed', get: -> @_result.executed
 Object.defineProperty FileResult::, 'unused', get: -> @_result.unused
 Object.defineProperty FileResult::, 'total', get: -> @_result.total
