@@ -4,12 +4,15 @@ FileResult = require '../lib/file-result'
 
 describe 'FileResult', ->
   beforeEach ->
-    @coverages = report['path/to/source.js']
-    @result = new FileResult 'path/to/source.js', @coverages
+    report().bind(@).then (result) ->
+      path = result.path
+      resultReport = result.resultReport
+
+      @result = new FileResult path, resultReport[path]
 
   describe 'fileName', ->
-    it 'return file name', ->
-      expect(@result.fileName).to.be.equal 'path/to/source.js'
+    it 'return relative file name', ->
+      expect(@result.fileName).to.be.equal 'test/fixtures/source.js'
 
   describe 'executed', ->
     it 'return executed line count', ->
