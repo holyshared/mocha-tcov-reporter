@@ -1,6 +1,6 @@
 {
   "name": "mocha-tcov-reporter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "keywords": [
     "mocha",
     "code coverage",
@@ -45,7 +45,7 @@
     "gulp-util": "~3.0",
     "mocha-lcov-reporter": "~0.0.2",
     "mocha-multi": "~0.7",
-    "sinon": "~1.15"
+    "sinon": "^1.16.1"
   },
   "config": {
     "blanket": {
