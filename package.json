@@ -15,7 +15,8 @@
   "scripts": {
     "test": "multi='spec=- mocha-lcov-reporter=lcov-report.lcov' ./node_modules/mocha/bin/mocha test",
     "build": "./node_modules/gulp/bin/gulp.js --require=coffee-script/register coffee",
-    "coveralls": "./node_modules/gulp/bin/gulp.js --require=coffee-script/register coveralls"
+    "coveralls": "./node_modules/gulp/bin/gulp.js --require=coffee-script/register coveralls",
+    "build:es6": "./node_modules/.bin/babel -d lib -s inline es6"
   },
   "repository": {
     "type": "git",
@@ -33,6 +34,7 @@
     "sprintf-js": "~1.0"
   },
   "devDependencies": {
+    "babel": "^5.8.23",
     "blanket": "~1.1",
     "bluebird": "^2.9.33",
     "chai": "^3.2.0",
