@@ -1,6 +1,6 @@
 expect = require('chai').expect
 report = require './fixtures/report'
-FileResult = require '../lib/file-result'
+FileResult = require('../lib/result').FileResult
 
 describe 'FileResult', ->
   beforeEach ->

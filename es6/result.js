@@ -16,12 +16,12 @@ export class LineResult {
     results.forEach(calculator); 
   }
   append(result) {
-    if (result == 0) {
+    if (result === 0) {
       this.unused++;
       this.total++;
-    } else if (result != undefined) {
-      this.executed++
-      this.total++
+    } else if (result !== undefined) {
+      this.executed++;
+      this.total++;
     }
   }
 }
@@ -36,6 +36,9 @@ export class FileResult {
   }
   get executed() {
     return this._result.executed;
+  }
+  get unused() {
+    return this._result.unused;
   }
   get total() {
     return this._result.total;
@@ -69,8 +72,8 @@ export class Result {
   }
   static createFrom(coverages) {
     let files = [];
-    for (let [file, lineResults] of Object.entries(coverages)) {
-      files.push( new FileResult(file, lineResults) );
+    for (let file of Object.keys(coverages)) {
+      files.push( new FileResult(file, coverages[file]) );
     }
     return new Result(files);
   }

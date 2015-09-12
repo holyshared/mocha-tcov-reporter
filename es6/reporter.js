@@ -1,7 +1,7 @@
 'use strict';
 
 import util from 'util';
-import Base from 'mocha/reporters/base';
+import mocha from 'mocha';
 import { Result } from './result';
 import { ReportWriter } from './writer';
 
@@ -12,7 +12,7 @@ import { ReportWriter } from './writer';
  * satisfactory - Satisfactory code coverage of value
  * critical - Critical code coverage of value
  */
-export class TextReporter extends Base {
+export class TextReporter extends mocha.reporters.Base {
   constructor(runner, options) {
     let opts = options || {};
     super(runner);

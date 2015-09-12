@@ -1,6 +1,6 @@
 expect = require('chai').expect
 util = require 'util'
-ReportWriter = require '../lib/report-writer'
+ReportWriter = require('../lib/writer').ReportWriter
 
 describe 'ReportWriter', ->
   describe '#mergeOptions', ->

@@ -1,8 +1,10 @@
 'use strict';
 
-import { color } from 'mocha/reporters/base';
+import mocha from 'mocha';
 import { vsprintf as format } from 'sprintf-js';
 import _ from 'lodash/object';
+
+let color = mocha.reporters.Base.color;
 
 let writer = {
   write(text) {
@@ -20,11 +22,11 @@ let writer = {
 export default writer;
 
 export class ReportWriter {
-  defaultOptions: {
-    critical: 30.0,
-    satisfactory: 70.0
-  }
   constructor(options) {
+    this.defaultOptions = {
+      critical: 30.0,
+      satisfactory: 70.0
+    };
     this.mergeOptions(options);
   }
   mergeOptions (options) {
@@ -45,18 +47,18 @@ export class ReportWriter {
     writer.writeEOL();
   }
   formatFileResult(file) {
-    let coverage = this.olorize(file.coverage);
+    let coverage = this.colorize(file.coverage);
     this.writeFileResult(coverage, file.executed, file.total, file.fileName);
   }
   colorize(coverage) {
     let percent = format( '%6.2f%%', [ coverage ]);
 
     if (coverage >= this.options.satisfactory) {
-      color('green', percent);
+      return color('green', percent);
     } else if (coverage < this.options.critical) {
-      color('fail', percent);
+      return color('fail', percent);
     } else {
-      color('bright yellow', percent);
+      return color('bright yellow', percent);
     }
   }
   writeFileResult(...values) {
