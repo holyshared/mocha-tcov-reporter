@@ -14,9 +14,8 @@
   "main": "lib/reporter.js",
   "scripts": {
     "test": "multi='spec=- mocha-lcov-reporter=lcov-report.lcov' ./node_modules/mocha/bin/mocha test",
-    "build": "./node_modules/gulp/bin/gulp.js --require=coffee-script/register coffee",
-    "coveralls": "./node_modules/gulp/bin/gulp.js --require=coffee-script/register coveralls",
-    "build:es6": "./node_modules/.bin/babel -d lib -s inline es6"
+    "build": "./node_modules/.bin/babel -d lib -s inline src",
+    "coveralls": "./node_modules/gulp/bin/gulp.js --require=coffee-script/register coveralls"
   },
   "repository": {
     "type": "git",
