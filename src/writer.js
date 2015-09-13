@@ -1,5 +1,3 @@
-'use strict';
-
 import mocha from 'mocha';
 import { vsprintf as format } from 'sprintf-js';
 import _ from 'lodash/object';
