@@ -5,12 +5,12 @@ import { ReportWriter } from './writer';
 
 /**
  * TextReporter
- * 
+ *
  * options.reporterOptions
  * satisfactory - Satisfactory code coverage of value
  * critical - Critical code coverage of value
  */
-export class TextReporter extends mocha.reporters.Base {
+export default class TextReporter extends mocha.reporters.Base {
   constructor(runner, options) {
     let opts = options || {};
     super(runner);
@@ -26,7 +26,7 @@ export class TextReporter extends mocha.reporters.Base {
   getCoverages() {
     global._$jscoverage || {};
   }
-  getFiles() { 
+  getFiles() {
     return this.result.files;
   }
 }
