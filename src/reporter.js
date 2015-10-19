@@ -26,7 +26,7 @@ export default class TextReporter extends mocha.reporters.Base {
     this.result = result;
   }
   getCoverages() {
-    global._$jscoverage || {};
+    return global._$jscoverage || {};
   }
   getFiles() {
     return this.result.files;
