@@ -1,3 +1,5 @@
+'use strict';
+
 import path from 'path';
 
 export class LineResult {
@@ -11,7 +13,7 @@ export class LineResult {
     this.executed = 0;
 
     let calculator = this.append.bind(this);
-    results.forEach(calculator); 
+    results.forEach(calculator);
   }
   append(result) {
     if (result === 0) {

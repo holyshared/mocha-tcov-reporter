@@ -1,3 +1,5 @@
+'use strict';
+
 import mocha from 'mocha';
 import { vsprintf as format } from 'sprintf-js';
 import _ from 'lodash/object';
@@ -6,7 +8,7 @@ let color = mocha.reporters.Base.color;
 
 let writer = {
   write(text) {
-    process.stdout.write(text); 
+    process.stdout.write(text);
   },
   writeln(text) {
     this.write(text);
