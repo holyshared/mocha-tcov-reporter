@@ -1,6 +1,6 @@
 expect = require('chai').expect
 util = require 'util'
-TextReporter = require('../lib/reporter').TextReporter
+TextReporter = require('../lib/reporter')
 report = require './fixtures/report'
 sinon = require 'sinon'
 
