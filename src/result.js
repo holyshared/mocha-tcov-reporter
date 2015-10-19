@@ -61,7 +61,8 @@ export class Result {
   }
   get coverage() {
     let file = null;
-    let total = executed = 0;
+    let total = 0;
+    let executed = 0;
 
     for (file of this.files) {
       total += file.total;
