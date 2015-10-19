@@ -1,3 +1,5 @@
+'use strict';
+
 import util from 'util';
 import mocha from 'mocha';
 import { Result } from './result';
