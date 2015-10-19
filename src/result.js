@@ -44,7 +44,7 @@ export class FileResult {
     return this._result.total;
   }
   get coverage() {
-    coverage = this.executed / this.total * 100;
+    let coverage = this.executed / this.total * 100;
     return parseFloat(coverage.toFixed(2));
   }
 }
