@@ -34,9 +34,9 @@
     "sprintf-js": "~1.0"
   },
   "devDependencies": {
-    "babel": "^5.8.23",
+    "babel": "^6.0.15",
     "blanket": "~1.1",
-    "bluebird": "^2.9.33",
+    "bluebird": "^3.0.5",
     "chai": "^3.2.0",
     "coffee-script": "~1.10",
     "coveralls": "~2.11",
