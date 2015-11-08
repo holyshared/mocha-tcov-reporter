@@ -11,7 +11,7 @@
     "blanket"
   ],
   "description": "code coverage reporter for mocha",
-  "main": "lib/reporter.js",
+  "main": "lib/index.js",
   "files": [
     "lib/*.js",
     "README.md"
