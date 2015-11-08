@@ -1,7 +1,3 @@
-expect = require('chai').expect
-util = require 'util'
-ReportWriter = require('../lib/writer').ReportWriter
-
 describe 'ReportWriter', ->
   describe '#mergeOptions', ->
     context 'when none options', ->

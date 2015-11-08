@@ -6,7 +6,7 @@ let color = mocha.reporters.Base.color;
 
 let writer = {
   write(text) {
-    process.stdout.write(text); 
+    process.stdout.write(text);
   },
   writeln(text) {
     this.write(text);

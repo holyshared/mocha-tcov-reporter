@@ -1,7 +1,3 @@
-expect = require('chai').expect
-report = require './fixtures/report'
-LineResult = require('../lib/result').LineResult
-
 describe 'LineResult', ->
   beforeEach ->
     report().bind(@).then (result) ->

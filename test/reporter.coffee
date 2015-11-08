@@ -1,9 +1,3 @@
-expect = require('chai').expect
-util = require 'util'
-TextReporter = require('../lib/reporter').TextReporter
-report = require './fixtures/report'
-sinon = require 'sinon'
-
 describe 'TextReporter', ->
   beforeEach ->
     report().bind(@).then (result) ->

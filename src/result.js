@@ -11,7 +11,7 @@ export class LineResult {
     this.executed = 0;
 
     let calculator = this.append.bind(this);
-    results.forEach(calculator); 
+    results.forEach(calculator);
   }
   append(result) {
     if (result === 0) {
@@ -42,7 +42,7 @@ export class FileResult {
     return this._result.total;
   }
   get coverage() {
-    coverage = this.executed / this.total * 100;
+    let coverage = this.executed / this.total * 100;
     return parseFloat(coverage.toFixed(2));
   }
 }
@@ -59,7 +59,8 @@ export class Result {
   }
   get coverage() {
     let file = null;
-    let total = executed = 0;
+    let total = 0;
+    let executed = 0;
 
     for (file of this.files) {
       total += file.total;
