@@ -12,6 +12,10 @@
   ],
   "description": "code coverage reporter for mocha",
   "main": "lib/reporter.js",
+  "files": [
+    "lib/*.js",
+    "README.md"
+  ],
   "scripts": {
     "test": "multi='spec=- mocha-lcov-reporter=lcov-report.lcov' ./node_modules/mocha/bin/mocha test",
     "build": "./node_modules/.bin/babel -d lib -s inline src",
@@ -34,8 +38,8 @@
     "sprintf-js": "~1.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.1.1",
-    "babel-preset-es2015": "^6.0.15",
+    "babel-cli": "^6.1.2",
+    "babel-preset-es2015": "^6.1.2",
     "blanket": "~1.1",
     "bluebird": "^3.0.5",
     "chai": "^3.2.0",
