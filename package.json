@@ -33,7 +33,7 @@
   },
   "homepage": "https://github.com/holyshared/mocha-tcov-reporter",
   "dependencies": {
-    "lodash": "~3.10",
+    "lodash": "^4.0.0",
     "mocha": "^2.3.0",
     "sprintf-js": "~1.0"
   },
