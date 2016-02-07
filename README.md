@@ -8,8 +8,7 @@ Will display the results in a list.
 [![Build Status](https://travis-ci.org/holyshared/mocha-tcov-reporter.svg?branch=upgrade_modules)](https://travis-ci.org/holyshared/mocha-tcov-reporter)
 [![Coverage Status](https://coveralls.io/repos/holyshared/mocha-tcov-reporter/badge.svg?branch=master)](https://coveralls.io/r/holyshared/mocha-tcov-reporter?branch=master)
 [![Code Climate](https://codeclimate.com/github/holyshared/mocha-tcov-reporter/badges/gpa.svg)](https://codeclimate.com/github/holyshared/mocha-tcov-reporter)
-[![Dependency Status](https://www.versioneye.com/user/projects/562456a336d0ab0016000c8f/badge.svg?style=flat)](https://www.versioneye.com/user/projects/562456a336d0ab0016000c8f)
-![mocha-tcov-reporter](https://raw.githubusercontent.com/holyshared/mocha-tcov-reporter/master/screen.png "mocha-tcov-reporter")
+[![Dependency Status](https://david-dm.org/holyshared/mocha-tcov-reporter.svg)](https://david-dm.org/holyshared/mocha-tcov-reporter)![mocha-tcov-reporter](https://raw.githubusercontent.com/holyshared/mocha-tcov-reporter/master/screen.png "mocha-tcov-reporter")
 
 Installation
 ------------------------------------------
